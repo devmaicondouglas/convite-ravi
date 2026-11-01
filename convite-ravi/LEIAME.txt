@@ -1,0 +1,16 @@
+CONVITE DIGITAL - RAVI (O PEQUENO PRÍNCIPE)
+
+COMO ABRIR NO VS CODE
+1. Abra a pasta "convite-ravi" no VS Code (Arquivo > Abrir Pasta).
+2. Instale a extensão "Live Server" e clique em "Go Live" (canto inferior direito).
+   Também funciona dando dois cliques no index.html.
+
+O QUE EDITAR
+- js/script.js (primeiras linhas): WHATSAPP = número que recebe as respostas, com 55 + DDD, só números.
+  Exemplo: "5517999999999". EVENT = data e hora da festa.
+- index.html: textos do convite, endereço e lista de sugestões de presente.
+- img/ravi.jpg: foto do Ravi (troque mantendo o nome do arquivo).
+- css/style.css: cores e tempos da animação. Fundo próprio: veja o comentário no final do arquivo.
+
+PARA COLOCAR NO AR
+Envie a pasta inteira para uma hospedagem estática (Netlify, GitHub Pages, Vercel).

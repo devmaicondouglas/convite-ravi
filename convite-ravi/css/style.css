@@ -1,0 +1,69 @@
+/* ORDEM DA ANIMAÇÃO: nuvens (0s) -> castelo sobe (1.6s) -> foto e convite aparecem (4.6s).
+   Para mudar o ritmo, ajuste os tempos em .castle, .photo e .card. */
+:root{
+  --sky-top:#16408a; --sky-mid:#3b7ccf; --sky-bot:#bcdcf6; --navy:#1b2f6b; --gold:#b98a2e; --gold-l:#e6c46a;
+  --paper:#fbf4e2; --paper-2:#f3e6c6; --ink:#1b2f6b;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky-top:#12346f; --sky-mid:#2f68b5; --paper:#f6edd6; --paper-2:#ecdcb4}}
+:root[data-theme="dark"]{--sky-top:#12346f; --sky-mid:#2f68b5; --paper:#f6edd6; --paper-2:#ecdcb4}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:"Cormorant Garamond",Georgia,serif;color:var(--ink);background:var(--sky-top);overflow-x:hidden}
+.stage{position:fixed;inset:0;background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 45%,var(--sky-bot) 100%);overflow:hidden;z-index:0}
+.star{position:absolute;border-radius:50%;background:#fff;opacity:.7}
+.star.t{animation:tw 3.5s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15}}
+.drift{position:absolute;left:-220px;width:150px;height:38px;border-radius:40px;background:#fff;opacity:.8;animation:drift linear infinite}
+.drift::before,.drift::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.drift::before{width:62px;height:62px;left:22px;top:-30px}
+.drift::after{width:80px;height:80px;left:62px;top:-42px}
+@keyframes drift{to{transform:translateX(calc(100vw + 440px))}}
+.castle{position:absolute;left:50%;bottom:9vh;width:min(780px,130vw);transform:translate(-50%,0);animation:rise 2.8s cubic-bezier(.2,.8,.2,1) 1.6s both}
+.castle svg{display:block;width:100%;height:auto;overflow:visible}
+@keyframes rise{from{transform:translate(-50%,120%)}to{transform:translate(-50%,0)}}
+.flag{transform-box:fill-box;transform-origin:left center;animation:wave 2.4s ease-in-out infinite}
+@keyframes wave{50%{transform:skewY(7deg) scaleX(.88)}}
+.clouds{position:absolute;left:0;bottom:0;width:100%;height:34vh;min-height:200px}
+main{position:relative;z-index:1;min-height:100svh;padding:32px 20px 48px;display:grid;grid-template-columns:1fr minmax(0,470px) 1fr;align-items:center;gap:clamp(20px,3vw,48px)}
+.photo{justify-self:end;width:min(330px,72vw);aspect-ratio:3/4.4;padding:8px;border:3px solid var(--gold);border-radius:999px 999px 30px 30px;background:linear-gradient(170deg,var(--paper),var(--paper-2));box-shadow:0 0 0 3px var(--gold-l),0 18px 50px rgba(15,35,90,.4);opacity:0;animation:appear 1.2s ease 4.6s forwards}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%;border-radius:999px 999px 22px 22px}
+.card{justify-self:center;width:min(470px,100%);background:linear-gradient(170deg,var(--paper),var(--paper-2));border:2px solid var(--gold);border-radius:26px;padding:30px 24px 24px;text-align:center;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7px var(--gold-l),0 18px 50px rgba(15,35,90,.4);opacity:0;animation:appear 1.2s ease 4.6s forwards}
+@keyframes appear{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+.crown{width:46px;height:auto;margin:-6px auto 6px;display:block}
+.eyebrow{font-size:1.05rem;font-weight:700;letter-spacing:.14em;margin:0}
+.name{font-size:clamp(4.2rem,20vw,6.2rem);line-height:.95;font-weight:700;margin:2px 0 0;background:linear-gradient(180deg,#e9c870,#b98a2e 55%,#8f6618);-webkit-background-clip:text;background-clip:text;color:transparent}
+.script{font-family:"Great Vibes","Brush Script MT",cursive;font-size:2.2rem;margin:0 0 6px;color:var(--navy)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:12px 18%}
+.info{list-style:none;margin:10px auto 6px;padding:0;display:inline-flex;flex-direction:column;gap:12px;text-align:left}
+.info li{display:flex;align-items:center;gap:14px;font-size:1.55rem;font-weight:700;line-height:1.1}
+.info small{display:block;font-size:1rem;font-weight:600;line-height:1.2;margin-top:3px;max-width:250px}
+.ic{flex:none;width:44px;height:44px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center}
+.ic svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.count{font-size:1.15rem;margin:8px 0 0;font-style:italic}
+.note{font-size:1.2rem;margin:14px 0 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;padding:8px 10px;border-radius:30px;border:2px solid var(--gold);background:var(--navy);color:var(--gold-l);font:700 1.05rem/1.1 "Cormorant Garamond",Georgia,serif;text-decoration:none;cursor:pointer;box-shadow:inset 0 0 0 2px var(--navy),inset 0 0 0 3px rgba(230,196,106,.5)}
+.btn svg{width:22px;height:22px;flex:none;stroke:var(--gold-l);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover{background:#243c85}
+.btn:focus-visible,input:focus-visible{outline:3px solid var(--gold-l);outline-offset:3px}
+.view[hidden]{display:none}
+.gifts{list-style:none;margin:14px 0 18px;padding:0;text-align:left;display:grid;gap:10px}
+.gifts li{padding:12px 14px;border:1px solid var(--gold-l);border-radius:14px;background:rgba(255,255,255,.45);font-size:1.2rem;line-height:1.25}
+.gifts b{display:block;font-size:1.3rem}
+dialog{border:2px solid var(--gold);border-radius:22px;background:var(--paper);color:var(--ink);padding:24px 22px;width:min(400px,92vw);font-family:inherit;text-align:center}
+dialog::backdrop{background:rgba(15,30,70,.55)}
+dialog h2{margin:0 0 4px;font-size:1.9rem}
+dialog p{margin:0 0 14px;font-size:1.15rem}
+label{display:block;text-align:left;font-weight:700;font-size:1.1rem;margin:10px 0 4px}
+input{width:100%;font:600 1.2rem "Cormorant Garamond",Georgia,serif;padding:10px 12px;border:1.5px solid var(--gold);border-radius:12px;background:#fff;color:var(--ink)}
+.row{display:grid;gap:8px;margin-top:16px}
+.link{background:none;border:0;color:var(--navy);font:600 1.1rem "Cormorant Garamond",Georgia,serif;text-decoration:underline;cursor:pointer;padding:8px}
+@media (max-width:980px){main{display:flex;flex-direction:column;align-items:center;padding-top:28px}.photo{width:min(250px,64vw)}}
+@media (max-width:380px){.grid{grid-template-columns:1fr}.info li{font-size:1.35rem}}
+@media (prefers-reduced-motion:reduce){.castle,.card,.photo,.drift,.flag,.star{animation:none!important}.drift{display:none}.card,.photo{opacity:1}}
+
+/* FUNDO PRÓPRIO (opcional): coloque sua imagem em img/fundo.jpg e tire os comentários abaixo.
+.stage{background:url("../img/fundo.jpg") center/cover no-repeat}
+*/
