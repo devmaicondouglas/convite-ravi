@@ -74,3 +74,19 @@ document.querySelectorAll("[data-rsvp]").forEach(function(b){
 nm.addEventListener("input", link); gs.addEventListener("input", link);
 document.getElementById("close").addEventListener("click", function(){ dlg.close(); });
 dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); });
+// música e tela de entrada
+var musica = document.getElementById("musica"), som = document.getElementById("som");
+musica.volume = 0.6;
+function atualizaSom(){
+  som.textContent = musica.paused ? "🔇" : "🎵";
+  som.setAttribute("aria-label", musica.paused ? "Ligar música" : "Desligar música");
+}
+som.addEventListener("click", function(){
+  if (musica.paused) { musica.play().catch(function(){}); } else { musica.pause(); }
+});
+musica.addEventListener("play", atualizaSom);
+musica.addEventListener("pause", atualizaSom);
+document.getElementById("abrir").addEventListener("click", function(){
+  document.body.classList.add("aberto");
+  musica.play().catch(function(){});
+});
