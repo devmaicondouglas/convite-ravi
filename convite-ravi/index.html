@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ravi faz 1 aninho – Convite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="stage" aria-hidden="true">
+  <div id="stars"></div>
+  <div class="castle">
+    <svg viewBox="0 -90 600 400" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 310Q300 225 560 310Z" fill="#78a868"/>
+      <line x1="120" y1="212" x2="480" y2="212" stroke="#fbfbf7" stroke-width="10" stroke-dasharray="11 7"/>
+      <rect x="120" y="217" width="360" height="75" fill="#fbfbf7"/>
+      <rect x="120" y="217" width="360" height="75" fill="#d9e1f1" opacity=".35"/>
+      <!-- torres laterais -->
+      <rect x="150" y="165" width="32" height="130" fill="#fbfbf7"/><rect x="172" y="165" width="10" height="130" fill="#d9e1f1"/>
+      <rect x="418" y="165" width="32" height="130" fill="#fbfbf7"/><rect x="440" y="165" width="10" height="130" fill="#d9e1f1"/>
+      <polygon points="144,167 166,100 188,167" fill="#1f3a8a"/><polygon points="166,100 188,167 166,167" fill="#15296b"/>
+      <polygon points="412,167 434,100 456,167" fill="#1f3a8a"/><polygon points="434,100 456,167 434,167" fill="#15296b"/>
+      <rect x="205" y="120" width="40" height="175" fill="#fbfbf7"/><rect x="235" y="120" width="10" height="175" fill="#d9e1f1"/>
+      <rect x="355" y="120" width="40" height="175" fill="#fbfbf7"/><rect x="385" y="120" width="10" height="175" fill="#d9e1f1"/>
+      <polygon points="198,122 225,40 252,122" fill="#1f3a8a"/><polygon points="225,40 252,122 225,122" fill="#15296b"/>
+      <polygon points="348,122 375,40 402,122" fill="#1f3a8a"/><polygon points="375,40 402,122 375,122" fill="#15296b"/>
+      <!-- corpo central -->
+      <rect x="240" y="165" width="120" height="130" fill="#fbfbf7"/><rect x="340" y="165" width="20" height="130" fill="#d9e1f1"/>
+      <polygon points="232,168 300,118 368,168" fill="#1f3a8a" stroke="#e6c46a" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="245" y="95" width="18" height="75" fill="#fbfbf7"/><rect x="337" y="95" width="18" height="75" fill="#fbfbf7"/><rect x="347" y="95" width="8" height="75" fill="#d9e1f1"/>
+      <polygon points="241,97 254,64 267,97" fill="#1f3a8a"/><polygon points="333,97 346,64 359,97" fill="#1f3a8a"/>
+      <!-- torre principal -->
+      <rect x="268" y="55" width="64" height="240" fill="#fbfbf7"/><rect x="318" y="55" width="14" height="240" fill="#d9e1f1"/>
+      <polygon points="258,58 300,-48 342,58" fill="#1f3a8a"/><polygon points="300,-48 342,58 300,58" fill="#15296b"/>
+      <path d="M270 20Q300 30 330 20M264 38Q300 50 336 38" stroke="#e6c46a" stroke-width="2.5" fill="none"/>
+      <rect x="256" y="55" width="88" height="7" rx="3" fill="#e6c46a"/>
+      <!-- janelas -->
+      <g fill="#1b2f6b" stroke="#e6c46a" stroke-width="2">
+        <rect x="295" y="78" width="10" height="20" rx="5"/><rect x="295" y="115" width="10" height="20" rx="5"/>
+        <circle cx="300" cy="185" r="12"/>
+        <rect x="251" y="190" width="9" height="18" rx="4.5"/><rect x="341" y="190" width="9" height="18" rx="4.5"/>
+        <rect x="221" y="150" width="8" height="16" rx="4"/><rect x="221" y="205" width="8" height="16" rx="4"/>
+        <rect x="371" y="150" width="8" height="16" rx="4"/><rect x="371" y="205" width="8" height="16" rx="4"/>
+        <rect x="162" y="190" width="8" height="16" rx="4"/><rect x="430" y="190" width="8" height="16" rx="4"/>
+      </g>
+      <path d="M282 292V258a18 18 0 0 1 36 0V292Z" fill="#1b2f6b" stroke="#e6c46a" stroke-width="3"/>
+      <g fill="#e8edf7"><rect x="268" y="292" width="64" height="7"/><rect x="262" y="299" width="76" height="7"/><rect x="256" y="306" width="88" height="7"/></g>
+      <!-- bandeiras -->
+      <g stroke="#e6c46a" stroke-width="2.5"><path d="M300 -48V-76M225 40V16M375 40V16M166 100V78M434 100V78"/></g>
+      <g fill="#e6c46a">
+        <polygon class="flag" points="300,-76 328,-67 300,-58"/>
+        <polygon class="flag" points="225,16 247,23 225,30"/>
+        <polygon class="flag" points="375,16 397,23 375,30"/>
+        <polygon class="flag" points="166,78 184,84 166,90"/>
+        <polygon class="flag" points="434,78 452,84 434,90"/>
+      </g>
+    </svg>
+  </div>
+  <svg class="clouds" id="clouds" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice"></svg>
+</div>
+
+<main>
+  <div class="photo"><img alt="Ravi vestido de pequeno príncipe, com capa azul e detalhes dourados" src="img/ravi.jpg"></div>
+
+  <section class="card" id="convite" aria-label="Convite">
+    <div class="view" id="v-convite">
+      <svg class="crown" viewBox="0 0 60 36" fill="#b98a2e" aria-hidden="true"><path d="M4 32 0 8l14 12L30 0l16 20L60 8l-4 24Z"/></svg>
+      <p class="eyebrow">O PEQUENO PRÍNCIPE</p>
+      <h1 class="name">Ravi</h1>
+      <p class="script">Meu primeiro aninho</p>
+      <div class="rule"></div>
+      <ul class="info">
+        <li><span class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>18 de dezembro<br>de 2026</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg></span>Às 19h</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 19 9.8C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg></span><span>Vila Castelline<small>Salão de Eventos, R. Paul Harris, 559, Vila Maj. Cícero de Carvalho, Bebedouro – SP</small></span></li>
+      </ul>
+      <p class="count" id="count"></p>
+      <p class="note">Sua presença tornará esse dia ainda mais especial! (Confirmar presença até o dia 4 de dezembro)</p>
+      <div class="grid">
+        <button class="btn" type="button" data-rsvp="yes"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/></svg>Confirmar presença</button>
+        <button class="btn" type="button" data-rsvp="no"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></svg>Não poderei ir</button>
+        <a class="btn" href="#presente"><svg viewBox="0 0 24 24"><rect x="3.5" y="9" width="17" height="11" rx="1.5"/><path d="M12 9v11M3.5 13h17M12 9C9 9 8 4.5 10.5 4.5S12 9 12 9Zm0 0c3 0 4-4.5 1.5-4.5S12 9 12 9Z"/></svg>Sugestão de presente</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Vila%20Castelline%20Sal%C3%A3o%20de%20Eventos%20R.%20Paul%20Harris%2C%20559%20-%20Vila%20Maj.%20Cicero%20de%20Carvalho%2C%20Bebedouro%20-%20SP%2C%2014702-016%2C%20Brazil" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 19 9.8C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg>Como chegar</a>
+      </div>
+    </div>
+
+    <div class="view" id="v-presente" hidden>
+      <p class="eyebrow">SUGESTÃO DE PRESENTE</p>
+      <h2 class="script" style="font-size:2.6rem;margin-top:6px">Para o pequeno príncipe</h2>
+      <div class="rule"></div>
+      <ul class="gifts">
+        <li><b>Roupinhas</b>Tamanho 2.</li>
+        <li><b>Fraldas</b>Tamanhos G e XG.</li>
+        <li><b>Livros</b>Livros de pano ou cartonados, com histórias para ler junto.</li>
+        <li><b>Brinquedos</b>De encaixe, empilhar e explorar.</li>
+        <li><b>Uma lembrança</b>Um cartão ou mimo feito com carinho também é muito bem-vindo.</li>
+      </ul>
+      <a class="btn" href="#convite" style="width:100%">Voltar ao convite</a>
+    </div>
+  </section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <h2 id="dt"></h2>
+  <p id="dp"></p>
+  <label for="nm">Seu nome</label>
+  <input id="nm" type="text" autocomplete="name" placeholder="Nome e sobrenome">
+  <div id="gw"><label for="gs">Quantas pessoas vão com você?</label>
+  <input id="gs" type="number" min="1" max="10" value="1" inputmode="numeric"></div>
+  <div class="row">
+    <a class="btn" id="send" href="#" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+    <button class="link" type="button" id="close">Fechar</button>
+  </div>
+</dialog>
+
+<script src="js/script.js"></script>
+</body>
+</html>

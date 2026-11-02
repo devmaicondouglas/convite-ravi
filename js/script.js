@@ -1,5 +1,5 @@
 // Número do WhatsApp que recebe as respostas (com 55 + DDD, só números)
-var WHATSAPP = "5500000000000";
+var WHATSAPP = "5517991638842";
 var EVENT = new Date(2026, 11, 18, 19, 0, 0);
 
 // céu: estrelas e nuvens (geradas com sementes fixas, sempre iguais)
