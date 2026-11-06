@@ -77,3 +77,6 @@ body:not(.aberto) .castle,body:not(.aberto) .photo,body:not(.aberto) .card,body:
 /* FUNDO PRÓPRIO (opcional): coloque sua imagem em img/fundo.jpg e tire os comentários abaixo.
 .stage{background:url("../img/fundo.jpg") center/cover no-repeat}
 */
+/* créditos */
+main{min-height:calc(100svh - 56px)}
+.creditos{position:relative;z-index:1;text-align:center;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));font-size:1.1rem;font-weight:700;color:var(--navy);text-shadow:0 1px 6px rgba(255,255,255,.9)}
