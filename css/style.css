@@ -80,3 +80,5 @@ body:not(.aberto) .castle,body:not(.aberto) .photo,body:not(.aberto) .card,body:
 /* créditos */
 main{min-height:calc(100svh - 56px)}
 .creditos{position:relative;z-index:1;text-align:center;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));font-size:1.1rem;font-weight:700;color:var(--navy);text-shadow:0 1px 6px rgba(255,255,255,.9)}
+.creditos a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.creditos a:hover{color:#243c85}
